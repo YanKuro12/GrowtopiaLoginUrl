@@ -7,7 +7,7 @@
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Growtopia LoginUrl</title>
+        <title>Growtopia Player Support</title>
         <link
             rel="icon"
             type="image/png"
@@ -90,8 +90,9 @@
                                                                 class="section-title center-align"
                                                             >
                                                                 <h2>
-                                                                    Login To Gtps
-                                                                                                                      </h2>
+                                                                    Login To
+                                                                  Gtps
+                                                                </h2>
 
                                                             </div>
                                                             <div
@@ -114,25 +115,13 @@
                                                                             type="hidden"
                                                                             value="<%= data %>"
                                                                         />
-<div class="form-group">
-  <input
-    type="text"
-    class="form-control grow-text"
-    name="servername"
-    placeholder="Server Name *"
-    required
-    oninput="checkServerName(this)"
-  />
-  <small id="serverError" class="hidden text-danger">Server Not Found.</small>
-</div>
-
 <div
                                                                             class="form-group"
                                                                         >
                                                                             <input
                                                                                 id="login-name"
                                                                                 class="form-control grow-text"
-                                                                                placeholder="GrowID Name *"
+                                                                                placeholder="Your GrowID *"
                                                                                 name="growId"
                                                                                 type="text"
                                                                             />
@@ -143,7 +132,7 @@
                                                                             <input
                                                                                 id="password"
                                                                                 class="form-control grow-text"
-                                                                                placeholder="Password *"
+                                                                                placeholder="Your Password *"
                                                                                 name="password"
                                                                                 type="password"
                                                                                 value=""
@@ -173,7 +162,7 @@
 <input
                                                                                 class="btn btn-lg btn-primary grow-button"
                                                         type="submit"
-                                                                                value"
+                                                                                value="Register"
                                                                             />
 </form>
 
@@ -194,24 +183,9 @@
         </div>
     </body>
     <script src="https://s3.eu-west-1.amazonaws.com/cdn.growtopiagame.com/website/resources/vendors/jquery/jquery-2.1.4.min.js"></script>
+
     <script src="https://s3.eu-west-1.amazonaws.com/cdn.growtopiagame.com/website/resources/vendors/bootstrap/javascripts/bootstrap.min.js"></script>
     <script>
-function checkServerName(input) {
-    const allowedServers = ["GalaxyTopia", "RyomenPs", "FirePs"]; // daftar server yang diizinkan
-    const error = document.getElementById('serverError');
-    const loginBtn = document.querySelector('input[type="submit"]');
-
-    const inputValue = input.value.trim().toLowerCase();
-    const isValid = allowedServers.some(name => name.toLowerCase() === inputValue);
-
-    if (!isValid) {
-      error.classList.remove('hidden');
-      loginBtn.disabled = true;
-    } else {
-      error.classList.add('hidden');
-      loginBtn.disabled = false;
-    }
-
         let clicked = false;
         $('a').click(function () {
             if (clicked === false) {
@@ -275,6 +249,8 @@ function checkServerName(input) {
                 characterData: false,
             });
         });
+    </script>
+    <script>
         document.addEventListener('DOMContentLoaded', function () {
             if (localStorage.getItem('growId')) {
                 document.getElementById('loginGrowId').value = localStorage.getItem('growId');
